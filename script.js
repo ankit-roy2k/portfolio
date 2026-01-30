@@ -206,6 +206,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       
       const formData = new FormData(contactForm);
+      const email = formData.get("email");
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
       const submitBtn = contactForm.querySelector("button[type='submit']");
       const originalBtnText = submitBtn.innerText;
       
@@ -214,7 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData)),
       })
         .then(async (response) => {
           if (response.status === 200) {
