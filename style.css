@@ -95,24 +95,24 @@ a:hover {
 
 @media (max-width: 768px) {
   .bulb {
-    opacity: 0.2;
-    filter: blur(60px);
+    opacity: 0.1; /* Reduced from 0.2 */
+    filter: blur(50px);
   }
   
   .bulb-1 {
-    width: 150px;
-    height: 150px;
+    width: 100px; /* Reduced from 150px */
+    height: 100px;
   }
   
   .bulb-2 {
-    width: 200px;
-    height: 200px;
+    width: 120px; /* Reduced from 200px */
+    height: 120px;
   }
   
   .bulb-3 {
-    width: 100px;
-    height: 100px;
-    opacity: 0.1;
+    width: 80px; /* Reduced from 100px */
+    height: 80px;
+    opacity: 0.05; /* Reduced from 0.1 */
   }
 }
 
