@@ -93,6 +93,29 @@ a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .bulb {
+    opacity: 0.2;
+    filter: blur(60px);
+  }
+  
+  .bulb-1 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .bulb-2 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .bulb-3 {
+    width: 100px;
+    height: 100px;
+    opacity: 0.1;
+  }
+}
+
 /* Navigation */
 nav {
   display: flex;
