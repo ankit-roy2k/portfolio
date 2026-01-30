@@ -64,11 +64,16 @@
 
         <!-- Simple Contact Form -->
         <form
-          action="mailto:ankit.roy0502@gmail.com"
-          method="post"
-          enctype="text/plain"
+          id="contactForm"
+          action="https://api.web3forms.com/submit"
+          method="POST"
           style="margin: 0 auto; width: 100%"
         >
+          <input
+            type="hidden"
+            name="access_key"
+            value="42436859-356d-4b0d-a41a-db9260e6aa4e"
+          />
           <input type="text" name="name" placeholder="Name" required />
           <input type="email" name="email" placeholder="Email" required />
           <textarea

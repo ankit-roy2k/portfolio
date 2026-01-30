@@ -198,4 +198,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start the typing loop
     setTimeout(type, 1000);
   }
+
+  // Contact Form Handling
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const submitBtn = contactForm.querySelector("button[type='submit']");
+      const originalBtnText = submitBtn.innerText;
+      
+      submitBtn.innerText = "Sending...";
+      submitBtn.disabled = true;
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+        .then(async (response) => {
+          if (response.status === 200) {
+            alert("Message sent successfully!");
+            window.location.href = "index.html";
+          } else {
+            console.log("response", response);
+            alert("Something went wrong! Please try again later.");
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+          }
+        })
+        .catch((error) => {
+          console.log("error", error);
+          alert("Something went wrong! Please try again later.");
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        });
+    });
+  }
 });
