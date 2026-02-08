@@ -372,9 +372,40 @@ h3 {
 }
 
 .social-links a:hover {
-  color: var(--accent-color);
   transform: translateY(-3px);
   display: inline-block;
+}
+
+.social-links .instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.social-links .x:hover {
+  color: #fff;
+}
+
+.social-links .reddit:hover {
+  color: #FF4500;
+}
+
+.social-links .github:hover {
+  color: #fff;
+}
+
+.social-links .linkedin:hover {
+  color: #0077b5;
+}
+
+.social-links .email:hover {
+  color: #EA4335;
+}
+
+.social-links .whatsapp:hover {
+  color: #25D366;
 }
 
 /* Form */
